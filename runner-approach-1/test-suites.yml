@@ -1,0 +1,23 @@
+version: "3"
+services:
+  chrome-automation-test:
+    image: mertcany/selenium
+    environment:
+      - BROWSER=chrome
+      - GRID_URL=hub
+      - DATA_PROVIDER_THREAD_COUNT=2
+      - THREAD_COUNT=1
+      - TEST_SUITE=TestSuite.xml
+    volumes:
+      - ./output/chrome-automation-test:/home/selenium-grid/test-output
+  firefox-automation-test:
+    image: mertcany/selenium
+    environment:
+      - BROWSER=firefox
+      - GRID_URL=hub
+      - DATA_PROVIDER_THREAD_COUNT=2
+      - THREAD_COUNT=1
+      - TEST_SUITE=TestSuite.xml
+    volumes:
+      - ./output/firefox-automation-test:/home/selenium-grid/test-output
+

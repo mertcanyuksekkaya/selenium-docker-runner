@@ -1,0 +1,14 @@
+version: "3"
+services:
+  automation-test:
+    image: mertcany/selenium
+    environment:
+      - Browser
+      - GRID_URL=hub
+      - DATA_PROVIDER_THREAD_COUNT=2
+      - THREAD_COUNT=1
+      - TEST_SUITE=TestSuite.xml
+    volumes:
+      - ./output/automation-test:/home/selenium-grid/test-output
+
+
